@@ -21,7 +21,7 @@ const SettingsPage: React.FC = () => {
         <>
             <Tab>
                 <div className="w-full h-full flex flex-col items-start justify-start p-[40px]">
-                    <h1>Settings</h1>
+                    <h1 className="text-neutral-100 text-[20px]">Settings</h1>
 
                     <SettingsItem>
                         <div className="h-32">

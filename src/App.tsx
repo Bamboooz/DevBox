@@ -13,7 +13,7 @@ const App: React.FC = () => {
 
 	return (
         <>
-            <div className={`w-full h-full flex flex-col theme-${theme} items-between justify-center border-app-border`}>
+            <div className={`w-full h-full flex flex-col theme-${theme} items-between justify-center`}>
 				<Header navigationExpanded={navigationExpanded} setNavigationExpanded={setNavigationExpanded} />
 
 				<div className="w-full h-full bg-background2 flex items-between justify-between">

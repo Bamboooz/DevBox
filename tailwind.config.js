@@ -15,6 +15,7 @@ export default {
                 "nav-button-active": "var(--nav-button-active)",
                 "page-border": "var(--page-border)",
                 "page-item": "var(--page-item)",
+                "outline": "var(--outline)",
             },
         }
     },
