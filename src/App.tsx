@@ -1,24 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 
-import TitleBar from "./components/TitleBar";
-import NavigationBar from "./components/NavigationBar";
-import Page from "./components/Pages/Page";
+import Header from "./Project/Header";
+import Navigation from "./Project/Navigation";
 
-import { customTitleBarEnabled } from "./appstate";
-import { cn } from "./utils/tw";
+import { theme } from "./ProjectSettings/appstate";
+import CurrentTabContent from "./Project/CurrentTabContent";
+import { TabTypes } from "./types/general";
 
 const App: React.FC = () => {
+	const [tab, setTab] = useState<TabTypes>(TabTypes.HOME);
+	const [navigationExpanded, setNavigationExpanded] = useState<boolean>(true);
+
 	return (
         <>
-            <div className={cn("w-full h-full flex flex-col items-between justify-center border-app-border", customTitleBarEnabled ? "border" : "border-b border-r border-l")}>
-				{customTitleBarEnabled &&
-					<TitleBar />
-				}
+            <div className={`w-full h-full flex flex-col theme-${theme} items-between justify-center border-app-border`}>
+				<Header navigationExpanded={navigationExpanded} setNavigationExpanded={setNavigationExpanded} />
 
 				<div className="w-full h-full bg-background2 flex items-between justify-between">
-					<NavigationBar />
+					<Navigation tab={tab} setTab={setTab} navigationExpanded={navigationExpanded} setNavigationExpanded={setNavigationExpanded} />
 					
-					<Page />
+					<CurrentTabContent tab={tab} />
 				</div>
             </div>
         </>

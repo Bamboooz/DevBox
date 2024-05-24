@@ -4,16 +4,18 @@ export default {
     theme: {
         extend: {
             colors: {
-                "background": "#272727",
-                "background2": "#202020",
-                "app-border": "#242424",
-                "app-min-max-hover": "#5a5a5a",
-                "app-min-max-active": "#787878",
-                "app-close-hover": "#e81123",
-                "app-close-active": "#f1707a",
-                "nav-button-hover": "#2b2b2b",
-                "page-border": "#1c1c1c",
-            }
+                "background": "var(--background)",
+                "background2": "var(--background2)",
+                "app-border": "var(--app-border)",
+                "app-min-max-hover": "var(--app-min-max-hover)",
+                "app-min-max-active": "var(--app-min-max-active)",
+                "app-close-hover": "var(--app-close-hover)",
+                "app-close-active": "var(--app-close-active)",
+                "nav-button-hover": "var(--nav-button-hover)",
+                "nav-button-active": "var(--nav-button-active)",
+                "page-border": "var(--page-border)",
+                "page-item": "var(--page-item)",
+            },
         }
     },
     plugins: [

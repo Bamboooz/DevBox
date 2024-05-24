@@ -4,13 +4,15 @@
 )]
 
 use tauri::{App, Manager};
-
 use window_shadows::set_shadow;
 
 fn initialize(app: &mut App) -> Result<(), Box<dyn std::error::Error>> {
     let window = app.get_window("main").unwrap();
 
-    set_shadow(&window, true).unwrap();
+    // window shadows only supports Windows or Mac
+    if cfg!(target_os = "windows") || cfg!(target_os = "macos") {
+        set_shadow(&window, true).unwrap();
+    }
 
     Ok(())
 }

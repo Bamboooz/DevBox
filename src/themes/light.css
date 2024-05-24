@@ -1,0 +1,13 @@
+.theme-light {
+    --background: #FFFFFF;
+    --background2: #FFFFFF;
+    --app-border: #FFFFFF;
+    --app-min-max-hover: #FFFFFF;
+    --app-min-max-active: #FFFFFF;
+    --app-close-hover: #FFFFFF;
+    --app-close-active: #FFFFFF;
+    --nav-button-hover: #FFFFFF;
+    --nav-button-active: #FFFFFF;
+    --page-border: #FFFFFF;
+    --page-item: #FFFFFF;
+}

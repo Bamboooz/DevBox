@@ -1,0 +1,13 @@
+.theme-dark-smooth {
+    --background: #1F2428;
+    --background2: #24292E;
+    --app-border: #1B1F23;
+    --app-min-max-hover: #3F4347;
+    --app-min-max-active: #4C5054;
+    --app-close-hover: #e81123;
+    --app-close-active: #f1707a;
+    --nav-button-hover: #3F4347;
+    --nav-button-active: #4C5054;
+    --page-border: #1B1F23;
+    --page-item: #24292E;
+}
