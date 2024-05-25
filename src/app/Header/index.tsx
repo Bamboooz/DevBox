@@ -3,6 +3,7 @@ import { LuAlignJustify, LuCommand } from "react-icons/lu";
 
 import Button from "../../components/Button";
 import { openInBrowser } from "../../utils/browser";
+import ProfilePicture from "../../components/ProfilePicture";
 
 interface HeaderProps {
     navigationExpanded: boolean;
@@ -25,12 +26,11 @@ const Header: React.FC<HeaderProps> = ({ navigationExpanded, setNavigationExpand
                     <LuCommand className="text-[14px] text-neutral-500 group-hover:text-neutral-100" />
 
                     <p className="text-[11px] mt-[1px] text-neutral-500 group-hover:text-neutral-100">Actions</p>
-
                     <p className="text-[11px] mt-[1px] text-neutral-600 group-hover:text-neutral-400">Ctrk + K</p>
                 </button>
 
-                <button onClick={() => openInBrowser("https://github.com/Bamboooz")} className="h-[28px] w-[28px] rounded-full border border-app-border hover:shadow-2xl">
-                    <img src="src/pfp.png" className="w-full h-full rounded-full" />
+                <button onClick={() => openInBrowser("https://github.com/Bamboooz")} className="h-[28px] w-[28px] rounded-full hover:shadow-2xl">
+                    <ProfilePicture url="src/assets/icons/pfp.png" />
                 </button>
             </div>
         </div>

@@ -3,11 +3,17 @@
     windows_subsystem = "windows"
 )]
 
-use tauri::{App, Manager};
+mod editors;
+
+use editors::{open_editor, get_editor_name, get_editor_icon};
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![])
+        .invoke_handler(tauri::generate_handler![
+            open_editor,
+            get_editor_name,
+            get_editor_icon,
+        ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

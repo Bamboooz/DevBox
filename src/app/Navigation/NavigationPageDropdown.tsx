@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { TabTypes } from "../../types/general";
+import { TabTypes } from "../../types/tab";
 import Button from "../../components/Button";
 import { cn } from "../../utils/cn";
 import { LuChevronDown } from "react-icons/lu";

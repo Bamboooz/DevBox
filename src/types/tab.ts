@@ -1,7 +1,9 @@
-export enum TabTypes {
+enum TabTypes {
     HOME,
     PROJECTS,
     SNIPPETS,
     EDITORS,
     SETTINGS,
 }
+
+export { TabTypes };

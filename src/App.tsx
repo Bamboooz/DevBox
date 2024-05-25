@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-import Header from "./Project/Header";
-import Navigation from "./Project/Navigation";
+import Header from "./app/Header";
+import Navigation from "./app/Navigation";
 
-import { theme } from "./ProjectSettings/appstate";
-import CurrentTabContent from "./Project/CurrentTabContent";
-import { TabTypes } from "./types/general";
+import { theme } from "./appstate";
+import CurrentTabContent from "./app/CurrentTabContent";
+import { TabTypes } from "./types/tab";
 
 const App: React.FC = () => {
 	const [tab, setTab] = useState<TabTypes>(TabTypes.HOME);

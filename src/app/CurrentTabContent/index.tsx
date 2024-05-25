@@ -1,6 +1,6 @@
 import React from "react";
 
-import { TabTypes } from "../../types/general";
+import { TabTypes } from "../../types/tab";
 import HomePage from "./Home";
 import ProjectsPage from "./Projects";
 import SettingsPage from "./Settings";

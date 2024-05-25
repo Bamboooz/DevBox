@@ -1,23 +1,19 @@
 [package]
 name = "devbox"
-version = "0.0.1"
+version = "0.0.0"
 description = "DevBox"
 authors = ["Bamboooz"]
 license = "BSD-3-Clause"
 repository = "https://github.com/Bamboooz/DevBox"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [build-dependencies]
 tauri-build = { version = "1.4", features = [] }
 
 [dependencies]
-tauri = { version = "1.4", features = [ "shell-open", "global-shortcut-all", "window-unminimize", "window-unmaximize", "window-close", "window-maximize", "window-minimize", "window-start-dragging", "window-show", "window-hide"] }
+tauri = { version = "1.4", features = [ "window-all", "dialog-all", "shell-open"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 
 [features]
-# this feature is used for production builds or when `devPath` points to the filesystem
-# DO NOT REMOVE!!
 custom-protocol = ["tauri/custom-protocol"]

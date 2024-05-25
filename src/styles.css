@@ -1,6 +1,6 @@
-@import url("./themes/dark-default.css");
-@import url("./themes/dark-smooth.css");
-@import url("./themes/light.css");
+@import url("./assets/themes/dark-default.css");
+@import url("./assets/themes/dark-smooth.css");
+@import url("./assets/themes/light.css");
 
 @tailwind base;
 @tailwind components;
@@ -34,6 +34,6 @@ html, body, #root {
     }
 
     * {
-        @apply font-sans;
+        @apply font-sans outline-outline;
     }
 }

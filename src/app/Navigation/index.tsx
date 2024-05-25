@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { LuHome, LuSettings, LuAppWindow, LuPackage, LuCode2, LuSearch } from "react-icons/lu";
 
 import { cn } from "../../utils/cn";
 import Button from "../../components/Button";
-import { TabTypes } from "../../types/general";
+import { TabTypes } from "../../types/tab";
 import NavigationPageButton from "./NavigationPageButton";
 import NavigationPageDropdown from "./NavigationPageDropdown";
 
@@ -20,6 +20,7 @@ const Navigation: React.FC<NavigationProps> = ({ tab, setTab, navigationExpanded
 
     const openSearch = () => {
         setNavigationExpanded(true);
+        searchBarRef.current?.focus();
         setFocused(true);
     };
 
@@ -30,8 +31,8 @@ const Navigation: React.FC<NavigationProps> = ({ tab, setTab, navigationExpanded
                     <div className="w-full flex flex-col items-start justify-start px-[4px] gap-[12px]">
                         {navigationExpanded ?
                             <div className="w-full px-[11px]">
-                                <div onClick={openSearch} className={cn("w-full h-[36px] pr-[11px] flex items-center justify-between bg-background rounded-[0.25rem] text-neutral-300 text-[14px] border border-app-border", focused ? "border-b-outline" : "")}>
-                                    <input ref={searchBarRef} type="text" autoFocus={focused} onFocus={() => setFocused(true)} onBlur={() => setFocused(false)} placeholder="Search..." className="w-full h-full px-[11px] bg-transparent outline-none" />
+                                <div onClick={openSearch} onBlur={() => setFocused(false)} className={cn("w-full h-[36px] pr-[11px] cursor-text flex items-center justify-between bg-background rounded-[0.25rem] text-neutral-300 text-[14px] border border-app-border", focused ? "border-b-outline" : "")}>
+                                    <input ref={searchBarRef} type="text" autoFocus={focused} placeholder="Search..." className="w-full h-full px-[11px] bg-transparent outline-none" />
                             
                                     <LuSearch className="text-neutral-300 text-[18px]" />
                                 </div>
