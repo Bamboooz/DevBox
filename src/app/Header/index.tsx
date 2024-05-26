@@ -1,9 +1,12 @@
-import React from "react";
-import { LuAlignJustify, LuCommand } from "react-icons/lu";
+import React, { useState } from "react";
+import { LuAlignJustify } from "react-icons/lu";
 
 import Button from "../../components/Button";
-import { openInBrowser } from "../../utils/browser";
 import ProfilePicture from "../../components/ProfilePicture";
+import Actions from "./Actions";
+import ProfileDropdown from "./ProfileDropdown";
+import Breadcrumb from "../../components/Breadcrumb";
+import { cn } from "../../utils/cn";
 
 interface HeaderProps {
     navigationExpanded: boolean;
@@ -11,29 +14,34 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ navigationExpanded, setNavigationExpanded }) => {
+    const [profileDropdownVisible, setProfileDropdownVisible] = useState<boolean>(false);
+
     return (
-        <div data-tauri-drag-region className="h-[48px] bg-background2 flex justify-between">
-            <div className="h-full px-[4px] py-[6px]">
-                <Button variant="expand" onClick={() => setNavigationExpanded(!navigationExpanded)}>
-                    <LuAlignJustify className="text-neutral-300 text-[18px]" />
-                </Button>
+        <>
+            <div data-tauri-drag-region className="h-[48px] bg-background2 flex justify-between">
+                <div className="flex items-center justify-between gap-3">
+                    <div className={cn("h-full px-[4px] py-[6px]", navigationExpanded ? "" : "")}>
+                        <Button variant="expand" onClick={() => setNavigationExpanded(!navigationExpanded)}>
+                            <LuAlignJustify className="text-neutral-300 text-[18px]" />
+                        </Button>
+                    </div>
+
+                    <Breadcrumb relativePath="src/app/Header/index.tsx" />
+                </div>
+
+                <div className="h-full flex justify-between items-center px-[11px] gap-[11px]">
+                    <div className="w-[1px] h-full bg-app-border" />
+
+                    <Actions />
+
+                    <button onClick={() => setProfileDropdownVisible(!profileDropdownVisible)} className="relative h-[28px] w-[28px] rounded-full hover:shadow-2xl">
+                        <ProfilePicture url="src/assets/icons/pfp.png" />
+
+                        <ProfileDropdown visible={profileDropdownVisible} setVisible={setProfileDropdownVisible} />
+                    </button>
+                </div>
             </div>
-
-            <div className="h-full flex justify-between items-center px-[11px] gap-[11px]">
-                <div className="w-[1px] h-full bg-app-border" />
-
-                <button className="group flex items-center justify-center gap-1 p-1 rounded-md hover:bg-nav-button-hover hover:active:bg-nav-button-active">
-                    <LuCommand className="text-[14px] text-neutral-500 group-hover:text-neutral-100" />
-
-                    <p className="text-[11px] mt-[1px] text-neutral-500 group-hover:text-neutral-100">Actions</p>
-                    <p className="text-[11px] mt-[1px] text-neutral-600 group-hover:text-neutral-400">Ctrk + K</p>
-                </button>
-
-                <button onClick={() => openInBrowser("https://github.com/Bamboooz")} className="h-[28px] w-[28px] rounded-full hover:shadow-2xl">
-                    <ProfilePicture url="src/assets/icons/pfp.png" />
-                </button>
-            </div>
-        </div>
+        </>
     );
 };
 

@@ -44,7 +44,9 @@
       {
         "title": "DevBox",
         "width": 1050,
+        "minWidth": 1000,
         "height": 750,
+        "minHeight": 685,
         "resizable": true,
         "decorations": true
       }

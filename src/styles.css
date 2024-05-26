@@ -6,14 +6,17 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, #root {
-    @apply h-screen w-screen !overflow-hidden;
-}
-
-@layer navigation {
+@layer components {
     .navigation-transiton {
         @apply transition-all ease-in-out;
         transition-duration: 200ms;
+    }
+}
+
+@layer utilities {
+    @font-face {
+        font-family: "Inter";
+        src: url("./assets/fonts/Inter/Inter-Regular.ttf");
     }
 }
 
@@ -33,7 +36,12 @@ html, body, #root {
         --outline: #c7c5fa;
     }
 
+    html, body, #root {
+        @apply h-screen w-screen !overflow-hidden;
+    }
+
     * {
-        @apply font-sans outline-outline;
+        @apply outline-outline;
+        font-family: "Inter";
     }
 }
