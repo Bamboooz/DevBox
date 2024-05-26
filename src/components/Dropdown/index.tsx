@@ -13,8 +13,6 @@ interface DropdownProps {
 const Dropdown: React.FC<DropdownProps> = ({ visible, setVisible, className, children }) => {
     const dropdownRef = useRef<HTMLDivElement>(null);
 
-    useOnClickOutside(dropdownRef, () => setVisible(false));
-
     return (
         <>
             {visible &&

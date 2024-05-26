@@ -23,7 +23,7 @@ interface SettingsItemProps {
     children?: React.ReactNode;
 }
 
-const SettingsItem: React.FC<SettingsItemProps> = ({ children }) => {
+const SettignsDropdowm: React.FC<SettingsItemProps> = ({ children }) => {
     return (
         <>
             <div className="w-full h-auto bg-page-item rounded-md border border-app-border">
@@ -37,36 +37,24 @@ const SettingsPage: React.FC = () => {
     return (
         <>
             <Tab>
-                <div className="w-full h-full flex flex-col items-start justify-start p-[40px] gap-[20px]">
-                    <h1 className="text-neutral-100 text-[20px]">Settings</h1>
+                <div className="w-full h-full">
+                    <div className="flex flex-col items-start justify-start p-[40px] gap-[20px]">
+                        <h1 className="text-neutral-100 text-[20px]">Settings</h1>
 
-                    <SettingsCategory name="General">
-                        <SettingsItem>
-                            <div className="h-32">
-                            
-                            </div>
-                        </SettingsItem>
+                        <SettingsCategory name="General">
+                            <SettignsDropdowm>
+                                <div className="h-32">
+                                
+                                </div>
+                            </SettignsDropdowm>
 
-                        <SettingsItem>
-                            <div className="h-32">
-                            
-                            </div>
-                        </SettingsItem>
-                    </SettingsCategory>
-
-                    <SettingsCategory name="General">
-                        <SettingsItem>
-                            <div className="h-32">
-                            
-                            </div>
-                        </SettingsItem>
-
-                        <SettingsItem>
-                            <div className="h-32">
-                            
-                            </div>
-                        </SettingsItem>
-                    </SettingsCategory>
+                            <SettignsDropdowm>
+                                <div className="h-32">
+                                
+                                </div>
+                            </SettignsDropdowm>
+                        </SettingsCategory>
+                    </div>
                 </div>
             </Tab>
         </>

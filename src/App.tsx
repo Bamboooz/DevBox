@@ -16,10 +16,12 @@ const App: React.FC = () => {
             <div className={`w-full h-full flex flex-col theme-${theme} items-between justify-center`}>
 				<Header navigationExpanded={navigationExpanded} setNavigationExpanded={setNavigationExpanded} />
 
-				<div className="w-full h-full bg-background2 flex items-between justify-between">
+				<div className="w-full h-full bg-background2 flex items-between justify-between overflow-hidden">
 					<Navigation tab={tab} setTab={setTab} navigationExpanded={navigationExpanded} setNavigationExpanded={setNavigationExpanded} />
 					
-					<CurrentTabContent tab={tab} />
+					<div className="size-full overflow-auto">
+						<CurrentTabContent tab={tab} />
+					</div>
 				</div>
             </div>
         </>
