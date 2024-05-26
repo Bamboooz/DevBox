@@ -6,7 +6,7 @@ interface TabProps {
 
 const Tab: React.FC<TabProps> = ({ children }) => {
     return (
-        <div className="w-full h-full bg-background border-l border-t border-page-border rounded-tl-md">
+        <div className="w-full h-full bg-background border-l border-t border-page-border rounded-tl-md overflow-auto">
             {children}
         </div>
     );
