@@ -8,13 +8,11 @@ import NavigationPageButton from "./NavigationPageButton";
 import NavigationPageDropdown from "./NavigationPageDropdown";
 
 interface NavigationProps {
-    tab: TabTypes;
-    setTab: React.Dispatch<React.SetStateAction<TabTypes>>;
     navigationExpanded: boolean;
     setNavigationExpanded: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Navigation: React.FC<NavigationProps> = ({ tab, setTab, navigationExpanded, setNavigationExpanded }) => {
+const Navigation: React.FC<NavigationProps> = ({ navigationExpanded, setNavigationExpanded }) => {
     const [focused, setFocused] = useState<boolean>(false);
     const searchBarRef = useRef<HTMLInputElement>(null);
 
@@ -42,20 +40,20 @@ const Navigation: React.FC<NavigationProps> = ({ tab, setTab, navigationExpanded
                             </Button>
                         }
 
-                        <NavigationPageButton title="Home" icon={<LuHome />} targetTab={TabTypes.HOME} navigationExpanded={navigationExpanded} tab={tab} setTab={setTab} />
+                        <NavigationPageButton title="Home" icon={<LuHome />} targetTab={TabTypes.HOME} navigationExpanded={navigationExpanded} />
                     </div>
 
                     <div className="w-full h-[1px] bg-app-border my-[6px]" />
 
                     <div className="w-full flex flex-col items-start justify-start px-[4px] gap-[3px]">
-                        <NavigationPageDropdown title="Projects" icon={<LuPackage />} targetTab={TabTypes.PROJECTS} navigationExpanded={navigationExpanded} tab={tab} setTab={setTab} />
-                        <NavigationPageDropdown title="Snippets" icon={<LuCode2 />} targetTab={TabTypes.SNIPPETS} navigationExpanded={navigationExpanded} tab={tab} setTab={setTab} />
-                        <NavigationPageDropdown title="Editors" icon={<LuAppWindow />} targetTab={TabTypes.EDITORS} navigationExpanded={navigationExpanded} tab={tab} setTab={setTab} />
+                        <NavigationPageDropdown title="Projects" icon={<LuPackage />} targetTab={TabTypes.PROJECTS} navigationExpanded={navigationExpanded} />
+                        <NavigationPageDropdown title="Snippets" icon={<LuCode2 />} targetTab={TabTypes.SNIPPETS} navigationExpanded={navigationExpanded} />
+                        <NavigationPageDropdown title="Editors" icon={<LuAppWindow />} targetTab={TabTypes.EDITORS} navigationExpanded={navigationExpanded} />
                     </div>
                 </div>
 
                 <div className="w-full flex flex-col items-start justify-start px-[4px]">
-                    <NavigationPageButton title="Settings" icon={<LuSettings />} targetTab={TabTypes.SETTINGS} navigationExpanded={navigationExpanded} tab={tab} setTab={setTab} />
+                    <NavigationPageButton title="Settings" icon={<LuSettings />} targetTab={TabTypes.SETTINGS} navigationExpanded={navigationExpanded} />
                 </div>
             </div>
         </>

@@ -2,13 +2,10 @@ import React, { useState } from "react";
 
 import Header from "./app/Header";
 import Navigation from "./app/Navigation";
-
 import { theme } from "./appstate";
 import CurrentTabContent from "./app/CurrentTabContent";
-import { TabTypes } from "./types/tab";
 
 const App: React.FC = () => {
-	const [tab, setTab] = useState<TabTypes>(TabTypes.HOME);
 	const [navigationExpanded, setNavigationExpanded] = useState<boolean>(true);
 
 	return (
@@ -17,10 +14,10 @@ const App: React.FC = () => {
 				<Header navigationExpanded={navigationExpanded} setNavigationExpanded={setNavigationExpanded} />
 
 				<div className="w-full h-full bg-background2 flex items-between justify-between overflow-hidden">
-					<Navigation tab={tab} setTab={setTab} navigationExpanded={navigationExpanded} setNavigationExpanded={setNavigationExpanded} />
+					<Navigation navigationExpanded={navigationExpanded} setNavigationExpanded={setNavigationExpanded} />
 					
 					<div className="size-full overflow-auto">
-						<CurrentTabContent tab={tab} />
+						<CurrentTabContent />
 					</div>
 				</div>
             </div>

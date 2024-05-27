@@ -1,24 +1,26 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import { TabTypes } from "../../types/tab";
 import Button from "../../components/Button";
 import { cn } from "../../utils/cn";
 import { LuChevronDown } from "react-icons/lu";
+import { setTab } from "../../store/slices/tabSlice";
 
 interface NavigationPageDropdownProps {
     title: string;
     icon: React.ReactElement;
     navigationExpanded: boolean;
-    tab: TabTypes;
-    setTab: React.Dispatch<React.SetStateAction<TabTypes>>;
     targetTab: TabTypes;
 }
 
-const NavigationPageDropdown: React.FC<NavigationPageDropdownProps> = ({ navigationExpanded, icon, title, tab, setTab, targetTab }) => {
+const NavigationPageDropdown: React.FC<NavigationPageDropdownProps> = ({ navigationExpanded, icon, title, targetTab }) => {
     const [expanded, setExpanded] = useState<boolean>(false);
+    const tab = useSelector((state: any) => state.tab.value);
+    const dispatch = useDispatch();
     
     const onClick = () => {
-        setTab(targetTab);
+        dispatch(setTab(targetTab));
         setExpanded(!expanded);
     };
 

@@ -11,7 +11,7 @@ const SettingsCategory: React.FC<SettingsCategoryProps> = ({ name, children }) =
     return (
         <>
             <div className="w-full flex flex-col items-start justify-center gap-2">
-                <p className="text-[14px] text-neutral-100 font-semiboldl">{name}</p>
+                <p className="text-[14px] text-neutral-100">{name}</p>
 
                 {children}
             </div>
@@ -43,7 +43,7 @@ const SettingsPage: React.FC = () => {
 
                         <SettingsCategory name="General">
                             <SettignsDropdowm>
-                                <div className="h-32">
+                                <div className="p-4 flex items-center justify-between">
                                 
                                 </div>
                             </SettignsDropdowm>

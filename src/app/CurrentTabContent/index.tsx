@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import { TabTypes } from "../../types/tab";
 import HomePage from "./Home";
@@ -7,11 +8,11 @@ import SettingsPage from "./Settings";
 import EditorsPage from "./Editors";
 import SnippetsPage from "./Snippets";
 
-interface CurrentTabContentProps {
-    tab: TabTypes;
-}
+const CurrentTabContent: React.FC = () => {
+    const tab = useSelector((state: any) => state.tab.value);
 
-const CurrentTabContent: React.FC<CurrentTabContentProps> = ({ tab }) => {
+    console.log(tab)
+
     return (
         <>
             {tab == TabTypes.HOME &&

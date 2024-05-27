@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { LuAlignJustify } from "react-icons/lu";
 
 import Button from "../../components/Button";
@@ -7,6 +8,7 @@ import Actions from "./Actions";
 import ProfileDropdown from "./ProfileDropdown";
 import Breadcrumb from "../../components/Breadcrumb";
 import { cn } from "../../utils/cn";
+import { TabTypes } from "../../types/tab";
 
 interface HeaderProps {
     navigationExpanded: boolean;
@@ -15,6 +17,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ navigationExpanded, setNavigationExpanded }) => {
     const [profileDropdownVisible, setProfileDropdownVisible] = useState<boolean>(false);
+    const tab = useSelector((state: any) => state.tab.value);
 
     return (
         <>
@@ -26,7 +29,9 @@ const Header: React.FC<HeaderProps> = ({ navigationExpanded, setNavigationExpand
                         </Button>
                     </div>
 
-                    <Breadcrumb relativePath="src/app/Header/index.tsx" />
+                    {tab == TabTypes.PROJECTS &&
+                        <Breadcrumb relativePath="src/app/Header/index.tsx" />
+                    }
                 </div>
 
                 <div className="h-full flex justify-between items-center px-[11px] gap-[11px]">

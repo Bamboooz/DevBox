@@ -13,10 +13,12 @@ interface DropdownProps {
 const Dropdown: React.FC<DropdownProps> = ({ visible, setVisible, className, children }) => {
     const dropdownRef = useRef<HTMLDivElement>(null);
 
+    useOnClickOutside(dropdownRef, () => setVisible(false));
+
     return (
         <>
             {visible &&
-                <div ref={dropdownRef} className={cn("absolute shadow-2xl", className)}>
+                <div ref={dropdownRef} onClick={(e) => e.stopPropagation()} className={cn("absolute shadow-2xl cursor-auto", className)}>
                     {children}
                 </div>
             }
