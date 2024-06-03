@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { LuCommand, LuPaintbrush, LuSettings } from "react-icons/lu";
 
 import CommandPalette from "../../components/CommandPalette";
+import { setTheme } from "../../store/slices/themeSlice";
 
 const Actions: React.FC = () => {
     const [actionsVisible, setActionsVisible] = useState<boolean>(false);
+    const dispatch = useDispatch();
 
     return (
         <>
@@ -17,9 +20,9 @@ const Actions: React.FC = () => {
             
             <CommandPalette visible={actionsVisible} setVisible={setActionsVisible} items={{"General": [
                 { icon: <LuSettings />, name: "Open settings", hint: "Open settings", keybind: ["Alt", "A"], command: () => {} },
-                { icon: <LuPaintbrush />, name: "Change theme: Default dark", hint: "Switch theme to default dark", command: () => {} },
-                { icon: <LuPaintbrush />, name: "Change theme: Dark smooth", hint: "Switch theme to dark smooth", command: () => {} },
-                { icon: <LuPaintbrush />, name: "Change theme: Light", hint: "Switch theme to light", command: () => {} },
+                { icon: <LuPaintbrush />, name: "Change theme: Default dark", hint: "Switch theme to default dark", command: () => dispatch(setTheme("default-dark")) },
+                { icon: <LuPaintbrush />, name: "Change theme: Dark smooth", hint: "Switch theme to dark smooth", command: () => dispatch(setTheme("dark-smooth")) },
+                { icon: <LuPaintbrush />, name: "Change theme: Light", hint: "Switch theme to light", command: () => dispatch(setTheme("light")) },
             ]}} />
         </>
     );

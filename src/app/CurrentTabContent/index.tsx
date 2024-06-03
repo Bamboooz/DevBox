@@ -9,9 +9,7 @@ import EditorsPage from "./Editors";
 import SnippetsPage from "./Snippets";
 
 const CurrentTabContent: React.FC = () => {
-    const tab = useSelector((state: any) => state.tab.value);
-
-    console.log(tab)
+    const tab = useSelector((state: any) => state.tab.tab);
 
     return (
         <>

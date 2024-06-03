@@ -14,7 +14,7 @@ interface NavigationPageButtonProps {
 }
 
 const NavigationPageButton: React.FC<NavigationPageButtonProps> = ({ navigationExpanded, icon, title, targetTab }) => {
-    const tab = useSelector((state: any) => state.tab.value);
+    const tab = useSelector((state: any) => state.tab.tab);
     const dispatch = useDispatch();
 
     return (

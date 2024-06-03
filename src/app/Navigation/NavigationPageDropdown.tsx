@@ -16,7 +16,7 @@ interface NavigationPageDropdownProps {
 
 const NavigationPageDropdown: React.FC<NavigationPageDropdownProps> = ({ navigationExpanded, icon, title, targetTab }) => {
     const [expanded, setExpanded] = useState<boolean>(false);
-    const tab = useSelector((state: any) => state.tab.value);
+    const tab = useSelector((state: any) => state.tab.tab);
     const dispatch = useDispatch();
     
     const onClick = () => {

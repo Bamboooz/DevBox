@@ -7,9 +7,8 @@
 @tailwind utilities;
 
 @layer components {
-    .navigation-transiton {
-        @apply transition-all ease-in-out;
-        transition-duration: 200ms;
+    .transiton-width {
+        transition: width 200ms ease-in-out;
     }
 }
 

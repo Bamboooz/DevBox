@@ -1,6 +1,9 @@
 import React from "react";
 
 import Tab from "../Tab";
+import { LuPaintbrush } from "react-icons/lu";
+import { useDispatch } from "react-redux";
+import { setTheme } from "../../../store/slices/themeSlice";
 
 interface SettingsCategoryProps {
     name: string;
@@ -23,7 +26,7 @@ interface SettingsItemProps {
     children?: React.ReactNode;
 }
 
-const SettignsDropdowm: React.FC<SettingsItemProps> = ({ children }) => {
+const SettignsDropdown: React.FC<SettingsItemProps> = ({ children }) => {
     return (
         <>
             <div className="w-full h-auto bg-page-item rounded-md border border-app-border">
@@ -34,6 +37,8 @@ const SettignsDropdowm: React.FC<SettingsItemProps> = ({ children }) => {
 };
 
 const SettingsPage: React.FC = () => {
+    const dispatch = useDispatch();
+
     return (
         <>
             <Tab>
@@ -42,17 +47,30 @@ const SettingsPage: React.FC = () => {
                         <h1 className="text-neutral-100 text-[20px]">Settings</h1>
 
                         <SettingsCategory name="General">
-                            <SettignsDropdowm>
-                                <div className="p-4 flex items-center justify-between">
-                                
-                                </div>
-                            </SettignsDropdowm>
+                            <SettignsDropdown>
+                                <div className="p-6 flex items-center justify-between">
+                                    <div className="flex items-center justify-center gap-6">
+                                        <LuPaintbrush className="text-neutral-300 text-[22px]" />
 
-                            <SettignsDropdowm>
-                                <div className="h-32">
-                                
+                                        <div className="flex flex-col items-start justify-center">
+                                            <p className="text-[16px] text-neutral-300">App theme</p>
+                                            <p className="text-[14px] text-neutral-400 -mt-1">Switch which app theme to display</p>
+                                        </div>
+                                    </div>
+
+                                    <button onClick={() => dispatch(setTheme("default-dark"))} className="size-10 bg-white">
+
+                                    </button>
+
+                                    <button onClick={() => dispatch(setTheme("dark-smooth"))} className="size-10 bg-white">
+
+                                    </button>
+
+                                    <button onClick={() => dispatch(setTheme("light"))} className="size-10 bg-white">
+
+                                    </button>
                                 </div>
-                            </SettignsDropdowm>
+                            </SettignsDropdown>
                         </SettingsCategory>
                     </div>
                 </div>

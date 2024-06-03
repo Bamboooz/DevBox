@@ -38,7 +38,7 @@ interface ProfileDropdownProps {
 const ProfileDropdown: React.FC<ProfileDropdownProps> = ({ visible, setVisible }) => {
     return (
         <>
-            <Dropdown visible={visible} setVisible={setVisible} className="w-72 flex flex-col items-center justify-start bg-background2 border border-app-border rounded-md right-0 top-[38px]">
+            <Dropdown visible={visible} setVisible={setVisible} className="w-72 flex flex-col items-center justify-start bg-background2 border border-app-border rounded-md right-[22px] top-[48px]">
                 <div className="p-1 gap-1 w-full flex flex-col items-center justify-center">
                     <ProfileDropdownButton icon={<LuSettings />} name="Settings" keybind={["Alt", "A"]} />
                     <ProfileDropdownButton icon={<LuUser />} name="Profile" keybind={["Alt", "U"]} />

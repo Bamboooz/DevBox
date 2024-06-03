@@ -24,7 +24,7 @@ const Navigation: React.FC<NavigationProps> = ({ navigationExpanded, setNavigati
 
     return (
         <>
-            <div className={cn("h-full bg-background2 flex flex-col items-center justify-between pb-[6px] navigation-transiton", navigationExpanded ? "w-[320px]" : "w-[48px]")}>
+            <div className={cn("h-full bg-background2 flex flex-col items-center justify-between pb-[6px] transiton-width", navigationExpanded ? "w-[320px]" : "w-[48px]")}>
                 <div className="w-full flex flex-col items-start justify-start">
                     <div className="w-full flex flex-col items-start justify-start px-[4px] gap-[12px]">
                         {navigationExpanded ?

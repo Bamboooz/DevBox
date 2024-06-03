@@ -17,7 +17,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ navigationExpanded, setNavigationExpanded }) => {
     const [profileDropdownVisible, setProfileDropdownVisible] = useState<boolean>(false);
-    const tab = useSelector((state: any) => state.tab.value);
+    const tab = useSelector((state: any) => state.tab.tab);
 
     return (
         <>
@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ navigationExpanded, setNavigationExpand
 
                     <Actions />
 
-                    <button onClick={() => setProfileDropdownVisible(!profileDropdownVisible)} className="relative h-[28px] w-[28px] rounded-full hover:shadow-2xl">
+                    <button onClick={() => setProfileDropdownVisible(!profileDropdownVisible)} className=" h-[28px] w-[28px] rounded-full hover:shadow-2xl">
                         <ProfilePicture url="src/assets/icons/pfp.png" />
 
                         <ProfileDropdown visible={profileDropdownVisible} setVisible={setProfileDropdownVisible} />
